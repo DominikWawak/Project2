@@ -32,4 +32,4 @@ The raspberry pi will communicate and analyse the data.
 
 
  
-# [Project Repository](https://dominikwawak.github.io/project2/)
+# [Project Repository](https://dominikwawak.github.io/Project2/)
