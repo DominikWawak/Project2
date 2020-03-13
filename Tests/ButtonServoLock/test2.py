@@ -1,4 +1,4 @@
-from flask import Flask, render_template_string, request   # Importing the Flask modules required for this project
+from flask import Flask, render_template, request   # Importing the Flask modules required for this project
 import RPi.GPIO as GPIO     # Importing the GPIO library to control GPIO pins of Raspberry Pi
 from time import sleep      # Import sleep module from time library to add delays
  
@@ -25,24 +25,12 @@ app = Flask(__name__)
 app.config['DEBUG'] = True
  
 # Store HTML code
-TPL = '''
-<html>
-    <head><title>Web Application to control Servos </title></head>
-    <body>
-    <h2> Web Application to Control Servos</h2>
-        <form method="POST" action="test">
-            <p>Slider 1 <input type="button"  max="12.5" name="button" /> </p>
-           
-            <input type="submit" value="submit" />
-        </form>
-    </body>
-</html>
-'''
+TPL = "index.html"
  
 # which URL should call the associated function.
 @app.route("/")
 def home():
-    return render_template_string(TPL)
+    return render_template (TPL)
  
 @app.route("/test", methods=["POST"])
 def test():
@@ -50,15 +38,15 @@ def test():
     slider1 = request.form["button"]
     
     # Change duty cycle
-    p.ChangeDutyCycle(float(button))
+    p.ChangeDutyCycle(float(slider1))
    
     # Give servo some time to move
     sleep(1)
     # Pause the servo
     p.ChangeDutyCycle(0)
-    p1.ChangeDutyCycle(0)
-    return render_template_string(TPL)
+   
+    return render_template (TPL)
  
 # Run the app on the local development server
-if __name__ == "__main__":
-    app.run()
+#if __name__ == "__main__":
+    app.run(host= '0.0.0.0')
