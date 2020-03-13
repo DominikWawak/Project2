@@ -1,8 +1,19 @@
-from flask import Flask, render_template, request   # Importing the Flask modules required for this project
-import RPi.GPIO as GPIO     # Importing the GPIO library to control GPIO pins of Raspberry Pi
-from time import sleep      # Import sleep module from time library to add delays
- 
-# Pins where we have connected servos
+from flask import Flask, render_template, request   
+import RPi.GPIO as GPIO    
+from time import sleep      
+import socket
+
+
+port= 5005
+
+def get_ip_address():
+    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+    s.connect(("8.8.8.8", 80)) #only opening a socket not sending data
+    return s.getsockname()[0]
+    
+    
+print(get_ip_address() , port) # will print to a screen in future
+
 servo_pin = 26          
 
  
@@ -48,5 +59,6 @@ def test():
     return render_template (TPL)
  
 # Run the app on the local development server
-#if __name__ == "__main__":
-    app.run(host= '0.0.0.0')
+if __name__ == "__main__":
+    app.run(host = '0.0.0.0', port = 5005)
+  
