@@ -34,7 +34,7 @@ A raspberry pi will be the device that will handle the communication for this pr
 * Python used to program these devices.
 
 ### The Project so far:
-![](/Pictures/slidy1)
+![](https://github.com/DominikWawak/Project2/blob/master/Pictures/slidy1.jpg)
 
 
 # [Project Graphics](https://dominikwawak.github.io/Project2/)
