@@ -1,13 +1,59 @@
 <html>
-    <head><title>Web Application to control Servos </title></head>
+    <head ><title>Slidy </title></head>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css">
+    <style>
+        body{
+            background-color: blueviolet;
+        }
+        #align {
+            text-align: center;
+           
+        }
+        #alignform{
+            display: inline-block;
+            margin: auto;
+            text-align: left;
+        }
+    </style>
+   
     <body>
-    <h2> Web Application to Control Servos</h2>
-        <form method="POST" action="test">
+        
+    <h2 class = "ui centered header"> Slidy application</h2>
+  
+    <br>
+    
+    <div class=" ui segment" id ="align">
+        
+       
+        
+        
+        <form id="alignform" class = "ui form " method="POST" action="test">
            
-            <button name ="button" type = "submit" value ="11.5"> Open </button>
-             <button name ="button" type = "submit" value ="2"> Close </button>
-           
+            <div class =" field">
+            <div class="ui buttons">
+                <button class="ui positive button" name ="button" type = "submit" value ="11.5">Open</button>
+                <div class="or"></div>
+                <button class="ui  button" name ="button" type = "submit" value ="2">Close</button>
+              </div>
+            </div>
+       
+         </form>
+        </div>
          
-        </form>
+
+
+        <button id = "b1"name ="button1" onclick="open1()"  type = "" value ="11.5">Open</button>
+
+        <script>
+            function open1(){
+              
+                document.getElementsByName(b1).value = "11.5";
+                document.getElementsByName(b1).type = "submit";
+                console.log(document.getElementById(value));
+            }
+
+        </script>
+     
     </body>
 </html>
