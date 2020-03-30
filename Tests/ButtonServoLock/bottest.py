@@ -29,18 +29,18 @@ def handle(msg):
 
     print ('Received:')
     print(command)
+    
+    bot.sendMessage (chat_id, str("Hi! type /open to open"))
 
     # Comparing the incoming message to send a reply according to it
-    if command == '/hi':
-        bot.sendMessage (chat_id, str("Hi! MakerPro"))
-    elif command == '/time':
+    if command == 'hi':
+        bot.sendMessage (chat_id, str("Hi! type /open to open"))
+    elif command == 'time':
         bot.sendMessage(chat_id, str("Time: ") + str(now.hour) + str(":") + str(now.minute) + str(":") + str(now.second))
-    elif command == '/date':
+    elif command == 'date':
         bot.sendMessage(chat_id, str("Date: ") + str(now.day) + str("/") + str(now.month) + str("/") + str(now.year))
-    elif command == '/red_1':
-        bot.sendMessage(chat_id, str("Red led is ON"))
-        GPIO.output(red_led_pin, True)
-    elif command == '/open':
+   
+    elif command == 'open' or command == 'Open':
         bot.sendMessage(chat_id, str("opening your drawer"))
         p.ChangeDutyCycle(float(11.5))
    
@@ -48,7 +48,7 @@ def handle(msg):
         sleep(1)
         # Pause the servo
         p.ChangeDutyCycle(0)
-    elif command == '/close':
+    elif command == 'close' or command == 'Close':
         bot.sendMessage(chat_id, str("closing your drawer"))
         p.ChangeDutyCycle(float(2))
    
