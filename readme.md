@@ -4,32 +4,39 @@
 
 ## Description:
 
-Smart drawer that keeps track of the items you  in, have put in ,and take out. The interaction with the drawer will be communicated to the user with an alert. 
-The drawer will also unlock with the use of a phone and or pasword/tweet/text.
+Smart drawer that keeps track of the items you, have put in ,and taken out. The interaction with the drawer will be communicated to the user via a telegram bot. 
+The drawer will also unlock with the use of messaging the telegram bot.
 
 ## Tools, Technologies and Equipment:
 
-* Communication
-The user and the drawer will communicate through a messenger chat bot (or other).
+* Communication  
+The user and the drawer will communicate through telegram chat bot created with the help of botFather on telegram.
 
-* Weight/Force sensors 
-will be used to keep track of the items in the drawer.
+* Weight/Force sensors  
+The weight sensor used is SEN0160 with analog-to-digital converter.
+It will be used to keep track of the items in the drawer.
 When an item is placed in the drawer will know its weight and store it. When the user takes out the item the drawer will know by the weight what item it was.
+The data will be reported to the user via the chat bot.
 
-* (option) Drawer lock
-A servo motor to lock and unlock the drawer with the command of the user.
+* Drawer lock  
+A servo motor is used to open and close the drawer with th help of messaging the chat bot.
 
-The arduino will control the lock mechanism and sense the weight and the movement of the drawer. 
+* Pulling everything together  
+A raspberry pi will be the device that will handle the communication for this project aswell as gathering the data.
 
-The raspberry pi will communicate and analyse the data.
+
 
 ## Hardware, programming languages etc.
 
-* Twitter of facebook messenger api to handle the information and communicate with the user.
-* Weight/force sensors to controll the items placed in drawer.
-* A servo motor for the lock mechanism,
-* Wilyodrin, python or a simmilar platform to program the devices and sensors.
+* Telegram chat bot api to handle the information and communicate with the user.
+* SEN0160 weight sensor to controll the interaction with the drawer.
+* A servo motor for the lock mechanism.
+* Python used to program these devices.
+
+### The Project so far:
+![](https://github.com/DominikWawak/Project2/blob/master/Pictures/slidy1.jpg)
 
 
+# [Project Graphics](https://dominikwawak.github.io/Project2/)
  
 # [Project Repository](https://dominikwawak.github.io/Project2/)
