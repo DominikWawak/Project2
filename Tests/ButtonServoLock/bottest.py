@@ -1,3 +1,4 @@
+# credit to https://maker.pro/raspberry-pi/projects/how-to-create-a-telegram-bot-with-a-raspberry-pi
 import datetime 
 import telepot   
 from telepot.loop import MessageLoop   

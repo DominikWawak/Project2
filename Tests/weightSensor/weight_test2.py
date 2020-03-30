@@ -1,3 +1,5 @@
+#Credit to https://circuitdigest.com/microcontroller-projects/iot-raspberry-pi-smart-container
+
 import RPi.GPIO as gpio
 import serial
 import time

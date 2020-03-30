@@ -1,3 +1,6 @@
+#credit to https://github.com/tatobari/hx711py
+
+
 import time
 import sys
 

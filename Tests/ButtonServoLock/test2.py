@@ -1,3 +1,4 @@
+# credit to https://maker.pro/raspberry-pi/tutorial/how-to-control-servo-motors-through-a-raspberry-pi-and-flask
 from flask import Flask, render_template, request   
 import RPi.GPIO as GPIO    
 from time import sleep      
