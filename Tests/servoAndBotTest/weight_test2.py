@@ -31,15 +31,15 @@ def show_weight():
     w=0
   
     w=(count-sample)/106
-    actualw = w -80590
+    actualw = w - YOURVALUE
     
-    print actualw /20 ,"g"
     
-  
-    global flag
+    
+    
+    print actualw/YOURRESULT,"g"
    
+  return actualw/YOURRESULT
 
-    return w
 
 
 
@@ -49,7 +49,7 @@ def readCount():
   i=0
   Count=0
   #print Count
-  time.sleep(0.1)
+  time.sleep(0.5)
   gpio.setup(DT, gpio.OUT)
   gpio.output(DT,1)
   gpio.output(SCK,0)

@@ -60,7 +60,7 @@ def handle(msg):
   
 
 
-bot = telepot.Bot('1082289154:AAFw2Q5PiNlyKO7w1bAtnUsRJiiV-yKxzNM')
+bot = telepot.Bot('ENTER ACCESS TOKEN HERE')
 print (bot.getMe())
 
 # Start listening to the telegram bot and whenever a message is  received, the handle function will be called.
