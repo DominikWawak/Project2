@@ -127,7 +127,7 @@ def handle(msg):
     
         
    
-bot = telepot.Bot(config.access_token)
+bot = telepot.Bot(env.access_token)
 
 print(bot.getMe())
 
@@ -149,14 +149,14 @@ while 1:
       if(current>previous):
           print("item added")
 
-          bot.sendMessage(config.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g"))
+          bot.sendMessage(env.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g"))
           
           
           
           
       elif(current<previous):
           print("item removed")
-          bot.sendMessage(config.chat_id, str("Item has been removed current weight = " + str(current-4) + "g"))
+          bot.sendMessage(env.chat_id, str("Item has been removed current weight = " + str(current-4) + "g"))
 
      
   previous = current 
