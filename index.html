@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> Slidy  </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the SemanticUI stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- import the SemanticUI and jQuery javascript files -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+  </head>  
+
+  <body>
+    <br>
+    <br>
+    <h1 class="ui left aligned header">IoT Project</h1>
+    <h1 class="ui center aligned header">Slidy</h1>
+    <br>
+    <br>
+
+    <div class="ui three column grid">
+      <div class="ui column"></div>
+      <div class="ui column">
+    <div class="ui secondary pointing menu">
+     
+        <a  class="item active" href="index.html"> Slidy </a>
+        <a  class="item " href="about.html"> About </a>
+       <a  class="item " href="howtodo.html" > How to make  </a>  
+    </div>
+  </div>
+  <div class="ui column"></div>
+  </div>
+  
+  <br>
+  <br>
+   
+
+
+    <section class="ui container">
+      <h1 class="ui center aligned header">Welcome to the Slidy Project</h1>
+    </section>
+<br>
+
+    <div class="slideshow-container">
+
+      <div class="mySlides fade">
+        
+        <img class = "slideimg" src="images/lost.png" style="width:100%">
+        <div class="text">Did you ever loose something and couldn't remember where you left it?</div>
+      </div>
+      
+      <div class="mySlides fade">
+        
+        <img class ="slideimg" src="images/smarthome.jpg" style="width:100%">
+        <div class="text">Maybe you want your smart home to be more smart?</div>
+      </div>
+      
+      <div class="mySlides fade">
+       
+        <img class = "slideimg" src="images/drawerfront.jpg" style="width:100%">
+        <div class="text">Why not try and make yourself a smart drawer!</div>
+      </div>
+      
+      </div>
+      <br>
+      
+      <div style="text-align:center">
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+        <span class="dot"></span> 
+      </div>
+      <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 5000); // Change image every 2 seconds
+        }
+        </script>
+  </body>
+</html>
