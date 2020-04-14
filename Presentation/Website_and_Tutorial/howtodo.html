@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title> How to  </title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the SemanticUI stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" type="text/css">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- import the SemanticUI and jQuery javascript files -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"></script>
+
+
+
+    <!-- import the webpage's javascript file -->
+    <script src="/script.js" defer></script>
+
+  </head>  
+
+  <body class="body">
+
+    <br>
+    <br>
+    <h1 class="ui left aligned header">IoT Project</h1>
+    <h1 class="ui center aligned header">How to Make Slidy</h1>
+    <br>
+    <br>
+
+    <div class="ui three column grid">
+      <div class="ui column"></div>
+      <div class="ui column">
+    <div class="ui secondary pointing menu">
+     
+        <a  class="item" href="index.html"> Slidy </a>
+        <a  class="item" href="about.html"> About </a>
+       <a  class="item active" href="howtodo.html" > How to make  </a>  
+    </div>
+  </div>
+  <div class="ui column"></div>
+  </div>
+
+  <br>
+  <br>
+
+  
+   
+
+
+    <section class="ui container">
+      <h2 class="ui center aligned header" id="titlebg">BUILD YOUR OWN SAFE SMART DRAWER</h2>
+      <br>
+      <p class="slimmargin">This project can be made by anyone. With just a bit of equipment, basic computer skills and innovation you can have your own personal <i>Secure Smart Drawer</i>
+      controlled by your own telegram bot. In the end your drawer will be able to lock and unlock with a simple text! As well as notify you whenever an item has been added or removed with the items weight. Pretty Cool, huh? </p>
+      <div class="ui segment" id="section5">
+        <p>What we need:</p>
+        <ul>
+          <li>Drawer, I used a small one you can use bigger.</li>
+          <li>Firm plywood (non bendable)</li>
+          <li>House hold tools eg: a hand saw, glue etc.</li>
+          <li>Raspberry pi, can be found <a href="https://www.raspberrypi.org/products/" target="_blank">here</a> it will be usefull if you can ssh into your raspberry pi there are many tutorials online.</li>
+          <li>Servo Motor, can be found <a href="https://uk.banggood.com/TowerPro-SG90-Mini-Gear-Micro-Servo-9g-For-RC-Airplane-Helicopter-p-1009914.html?gmcCountry=IE&currency=EUR&createTmp=1&utm_source=googleshopping&utm_medium=cpc_bgcs&utm_content=haosen&utm_campaign=pla-ieg-all-pc-1101&ad_id=338313631608&gclid=Cj0KCQjwj7v0BRDOARIsAGh37ipILI3e927JwvxkAoKU4arS3BYmq_Qa9xgfKjTy2PtSNhnWSiBfkcQaAsZ3EALw_wcB&cur_warehouse=CN" target="_blank">here</a>.</li>
+          <li>Load Cell with Analoge to Digital converter, can be found <a href="https://www.digikey.ie/product-detail/en/dfrobot/SEN0160/1738-1127-ND/6588549?utm_adgroup=General&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_Product&utm_term=&productid=&gclid=Cj0KCQjw09HzBRDrARIsAG60GP_NhFRhcF9F-rcz7QZJo11GpTfyI77xUDT32DcVlnj-LVZsmhU0xNgaAvsAEALw_wcB" target="_blank">here</a>.</li>
+          <li>Jumper Wires to connect the devices.</li>
+          <li>A computer and mobile phone with internet connection</li>
+          <li>A brain</li>
+        </ul>
+
+      <h3>NOTE: This is the code source for this project and is reffered to throughout the tutorial. <br> The link is: https://github.com/DominikWawak/Project2</h3>
+      </div>
+
+      <div class="ui segment" id="section1">
+        <h4>Part 1:    Setting up the bot</h4>
+        <p>Dolwnoad Telegram on your phone. Next search "Bot Father" inside telegram. Follow his Instructions to create a /newbot ... </p>
+        <div class="centerImage">
+        <img class="borderImage" src="images/BFScreen.jpg" alt="botfather screenshot" height="500px" width="300px">
+      </div>
+      <br>
+        <p>After you have made your bot you will get a mesage with your access token, TAKE NOTE OF THE ACCESS TOKEN, we will need it later on.
+          Now you can search telegrm for your bot with the name you have given him. He cant do much ... yet.
+        
+
+        </p>
+
+
+
+      </div>
+      <div class="ui segment" id="section2">
+        <h4>Part 2: OPEN - CLOSE</h4>
+       <p>In this step have your raspberry pi ready (no need to turn it on). We will use a servo motor to open and close our drawer.</p>
+       <p>How servo motors work: </p> 
+       <p>The servo motor has 3 wires, the red is the power which needs voltage, the brown is the ground wire and the most important is the control wire. Through the yellow wire we can apply a pulse whose duration will turn the motor to a specific angle. This principle is called <i>pulse width modulation</i>The servo motor is made up of a DC motor controlled by a variable resistor and gears.
+      Pulse width modulation has two main components: duty cylce and frequency. Duty cylcle tells the amount of time a signal is on (as a percentage)and the frequency tells how fast the pwm runs a cycle per second. </p>
+     <!--https://engineering.eckovation.com/servo-motor-types-working-principle-explained/--> 
+      <!--https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019OkFSAU-->
+       <br>
+       <br>
+       <!--https://maker.pro/raspberry-pi/tutorial/how-to-control-servo-motors-through-a-raspberry-pi-and-flask-->
+       <p>Servo motors come with various arm atachements I used one that came with the motor however if you want your lock to be more durable you can make your own lock arm and fit it securely on the servo motor (I would advise doing this last). <br> How to connect the servo motor: </p>
+       <ul>
+        <li>Yellow (controller) - GPIO pin 26 </li>
+        <li>Red - 5V pin</li>
+        <li>Brown - GND pin </li>
+        
+        
+      </ul>
+      <p>NOTE: Useful tip is to use command <i>pinout</i> on the raspberry pi to see the all the pins</p>
+       <div class="centerImage">
+         <img class="borderImage" src="images/servoconnect.jpg">
+       </div>
+       <h5>Test</h5>
+
+       <P>Now we can finally test if the project works so far! Here are the steps :</P>
+       <ol>
+         <li>Turn on the raspberry pi and clone or download the github repo (mentioned at the start) </li>
+         <li>Installations: in your raspberry pi terminal run this command <i>sudo pip install telepot</i></li>
+         <li>On the pi terminal use the cd command to navigate to /Project2/Test/BUTTONSERVOLOCK and use the command nano bottest.py to open the text editor look through the code until you can see where you need to enter your bots Access Token. </li>
+         <br>
+         <div class="centerImage">
+           <img class="borderImage" src="images/botaccess.jpg" width="800">
+
+         </div>
+         <br>
+         <li>Finally we are ready! While being in the BOTTEST DIRECTORY  type in <i>sudo python bottest.py</i>.</li>
+         <li>If you have done each step correctly your terminal should say "listening..." and if you send a massage saying "open" or "close" the servo motor will react.</li>
+         <li>The servo motor is made to rotate 180 degrees you can play around with that and your locking arm.</li>
+       </ol>
+       
+      </div>
+
+      <div class="ui segment"  id="section3">
+        <h4>Step 3: Weight Sensor</h4>
+        <p>This step involves some creativity as there are many ways to set up the load cell.</p>
+        <p>How load cells work:</p>
+        <p>The load cell used in this project is rectangular piece of aluminium with two machined holes in the middle. 
+          The holes make the load cell vunerable to being bent slightly. There are four resistors around the machined holes area and they compress or streach when a weight is placed on the cell. The working princepal of the loadcell and the resistor is based of a wheatsonr bridge which helps to read the tiny variations of resistace like  potential divider. The tiny resistance is read and amplified by the analoge to digital converter.</p>
+        <br>
+        <br>
+        <p>Ways to set up a load cell can be seen below in the test section. You can either use the holes in uour loadcell and attach your load cell with screws in your drawer or like me attach it to a block first and and then attach the block inside the drawer.</p>
+
+
+        <p>NOTE: most important thing is to keep the machined holes in the air unsupported, and then using screws make sure they are tight and prevent slip. </p>
+        <p>Connections: the load cell has four cables the letters correspond to the A to D converter:</p>
+        <ul>
+          <li>Red - E+</li>
+          <li>Black - E-</li>
+          <li>Green - A- (S-)</li>
+          <li>White - A+ (S+)</li>
+        </ul>
+        <p>Most popular converter used with these cells would be the HX711 how ever I use one that came with my load cell from DFROBOT</p>
+      <div class="centerImage">
+        <img src="images/dfrobot.jpg" width="130" height="100">
+        <img src="images/hx711.jpg" width="200" height="100">
+      </div>
+        <p>Now connecting the converter to the raspberry pi :</p>
+        <div class="centerImage">
+          <img src="images/loadcellconnect.png">
+        </div>
+        <p>When connecting to the converter some may have 2 VCC and GND connectors in that case you need to join both together like I did</p>
+        <ul>
+          <li>VCC - 5V pin (You can use a different 5V pin if you already have the servo morot in one)</li>
+          <li>GND - GND pin</li>
+          <li>DT - GPIO pin 27 </li>
+          <li>SCK - GPIO pin 17 </li>
+      
+          
+        </ul>
+       
+        <br>
+        <h5>Test</h5>
+        <p>Now we can move on to the testing your load cell should be connected to the raspberry pi and the converter, and your load cell should be simply set up maybe like so:</p>
+        <div class="centerImage">
+          <img src="images/setupblock.jpg" width="230" height="200">
+          <img src="images/setupscrews.jpeg" width="290" height="200">
+          <img src="images/mysetup2.jpg" width="290" height="200">
+        </div>
+        
+        <p>On the raspberry pi navigate to the <b>Project2/Tests/weightSensor</b> with the cd command. We need to calibrate the weight sensor we can do this by :</p>
+        <ul>
+          <li>run the python script <i>sudo python weight_test2.py</i></li>
+          <li>You should get somewhat a constant value being outputted to the console like form me it was around 80590 (Note if your values are negative then maybe its your green and white wires from the a to d converter connected wrong try switching them.)</li>
+          <li>Using nano or a different editor in the show_weight() function subtract your value from <b>actualw</b> </li>
+          <li>If you run your programme now it should firstly read about zero however if you place a known weight like a kitchen ingridient on it, it will now show the actual weight.</li>
+          <li>To get the actual weight place a known weight on the load cell with the programme running and record the value. Divide that value by your weight in grams. eg. if my output value is 1594 and my weight is 100g then my result is 15.9 </li>
+          <li>Now take your result and once again put it in the show_weight() function and divide your actual value by the result from previous part.<br> eg.  <b>actualw = (w -80590)/16 </b>(I rounded of my value) </li>
+        </ul>
+        
+
+
+      </div>
+      <div class="ui segment"  id="section4">
+        <h4 class="ui header">Part 4: Putting it all together</h4>
+        <p>So far we have two devices, you may be happy with them and maybe you just want to use them to make your own project thats perfect!</p>
+        <p>To make the drawer you will need to use some creativity it wont be the same as for me. The first thing is you need to cut the plywood to fit the inside of your drawer like so :</p>
+        <div class="centerImage">
+        <img class="borderImage" src="images/drawerfloor.jpg">
+      </div>
+        <p>The fit of the plywood should be loose enough to move up and down without catching onto anything. Remember the plywood needs to be firm and the bigger your drawer the more  <i>non bendable</i> it will have to be.</p>
+        <br>
+        <p>The second thing is to attach the load cell inside the drawer, you might have used just screws to attach it thats okay, if you did it like me and attached it to a block with screws first you will have to glue or screw the block to the drawer (I did both). The position of the load cell isnt really important if you have it secured in place, I placed mine in the middle. <br>
+        The second important attachement is fixing the plywood bed/plank to the load cell, I tried screws and it works however for the purpose of presenting the project I didnt want to fix the bed in place forever therefore I was lucky to find a random metal piece with a cylinder sticking out I was able to drill a whole in my plywood and support it , <b>THIS WILL NOT BE THE MOST ACCURATE </b>. If you plan to use this daily I would reccomend the screws or maybe you have a better idea? <br> NOTE: Dont use magnets to attach the plwood, I have tried with a magnet and it was throwing my values off (fluctuating).</p>
+        <p>Now drill or make a small hole in your drawer for the power cable for the raspberry pi and fit all of your devices inside like so:</p>
+        <div class="centerImage">
+          <img class="borderImage" src="images/insidedrawer1.jpg">
+        </div>
+        <p>Now drill or make a small hole in your drawer and the the "shelf" of your drawer, for the power cable for the raspberry pi and fit all of your devices inside like so:</p>
+        <div class="centerImage">
+          <img class = "borderImage" src="images/drawerback.jpg">
+          <img class = "borderImage" src="images/shelfback.jpg">
+        </div>
+
+        
+        <p>The last step is positioning the lock and attacking the servo motor I have bended two pieces of aluminium I found around the house you can also get l shaped backets, I have zip tied them to the motor. You will need to see how this will fit in your drawer (based on your closing arm), My solution was to glue a small piece of wood or anything strong inside my drawer so when the arm of the servo motor rises it will block itself. (as you can see the notch on the picture above is for the small block inside where the drawer sits in.) <br> Also you may use the holes on the servo motor to attach it. The arm of the servo motor may fall off easily so maybe if you plan to use it often glue it in place with care for the motor shaft.</p>
+        <div class="centerImage">
+          <img class = "borderImage" src="images/servoattach.jpg">
+          
+        </div>
+        <br>
+        <p>Now to test the whole application need your chat id in order to send messages from the bot to you this can be obtained by navigating to https://api.telegram.org/bot ENTER ACCESS TOKEN HERE /getUpdates and now send a random message to your bot and refresh the page you will see a lot of details including the chat id, enter the chat id to the code where required.</p> 
+        <p>Fitting all the devices inside the drawer and connecting them:</p>
+        <div class="centerImage">
+          <img class="borderImage" src="images/alldevices.jpg">
+
+        </div>
+        <p>Now you can run your drawer by running the apptest.py just like the other tests were ran, remember to enter your tokens and chat ids there where required. Run the app and if all is good you should be notified then theres any interaction with the floor of your drawer, also your open and close commands should work.</p>
+         <br>
+        <h5>Additional:</h5>
+        <p>How to make your programme run whenever you plug in your raspberry pi:</p>
+        <ul>
+          <li>Firstly run this comand <i>sudo nano /home/pi/.bashrc</i></li>
+          <li>Now scroll down to the end of the file and at the very end type this in <i>sudo python /home/pi/YOUR PATH TO THE PROGRAMME.</i></li>
+          <li>now reboot your pi and your programme will run on boot, also it will run when you ssh or open a new terminal window.</li>
+          <li>to exit you need to ssh to your raspbery pi and ctrl c or connect your raspberry pi normally and ctrl c there.</li>
+       </ul>
+<br>
+<br>
+       <h3>AND WE ARE DONE!</h3>
+       <div class="centerImage">
+        <img class="borderImage" src="images/final.jpg">
+
+      </div>
+
+      </div>
+    
+      
+    </section>
+<h5>Written by Dominik Wawak - 13/4/2020 <br>
+This was a student project</h5>
+<br>
+<br>
+  </body>
+</html>
