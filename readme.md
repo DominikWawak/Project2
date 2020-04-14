@@ -33,10 +33,10 @@ A raspberry pi will be the device that will handle the communication for this pr
 * A servo motor for the lock mechanism.
 * Python used to program these devices.
 
-### The Project so far:
-![](https://github.com/DominikWawak/Project2/blob/master/Pictures/slidy1.jpg)
+## Finished Product
+![](https://github.com/DominikWawak/Project2/blob/master/Presentation/Website_and_Tutorial/images/final.jpg)
 
 
 # [Project Graphics](https://dominikwawak.github.io/Project2/)
  
-# [Project Repository](https://dominikwawak.github.io/Project2/)
+# [Project Website](https://github.com/DominikWawak/Project2/blob/master/Presentation/Website_and_Tutorial/index.html)
