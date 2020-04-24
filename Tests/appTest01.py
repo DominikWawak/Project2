@@ -6,7 +6,7 @@ from telepot.loop import MessageLoop
 import RPi.GPIO as GPIO   
 from time import sleep  
 import time  
-import config
+import env
 
 
 
@@ -42,7 +42,7 @@ def show_weight():
     w=0
   
     w=(count-sample)/106
-    actualw = (w -80933)/20
+    actualw =( (w -80933)/20)+8 #calibration
     
     
     
@@ -139,24 +139,26 @@ print ('Listening....')
 
     
 
-
+noitems=0
 
 while 1:
   show_weight()
   current = show_weight()
   difference = previous - current
   if abs(difference)>delta:
+      time.sleep(8)
       if(current>previous):
           print("item added")
-
-          bot.sendMessage(env.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g"))
+          noitems=noitems+1
+          bot.sendMessage(env.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g , " + "number of items = "+ str(noitems)))
           
           
           
           
       elif(current<previous):
+          noitems=noitems-1
           print("item removed")
-          bot.sendMessage(env.chat_id, str("Item has been removed current weight = " + str(current-4) + "g"))
+          bot.sendMessage(env.chat_id, str("Item has been removed current weight = " + str(current-4) + "g , "+ "number of items = "+ str(noitems)))
 
      
   previous = current 
