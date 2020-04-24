@@ -65,7 +65,7 @@
           <li>House hold tools eg: a hand saw, glue etc.</li>
           <li>Raspberry pi, can be found <a href="https://www.raspberrypi.org/products/" target="_blank">here</a> it will be usefull if you can ssh into your raspberry pi there are many tutorials online.</li>
           <li>Servo Motor, can be found <a href="https://uk.banggood.com/TowerPro-SG90-Mini-Gear-Micro-Servo-9g-For-RC-Airplane-Helicopter-p-1009914.html?gmcCountry=IE&currency=EUR&createTmp=1&utm_source=googleshopping&utm_medium=cpc_bgcs&utm_content=haosen&utm_campaign=pla-ieg-all-pc-1101&ad_id=338313631608&gclid=Cj0KCQjwj7v0BRDOARIsAGh37ipILI3e927JwvxkAoKU4arS3BYmq_Qa9xgfKjTy2PtSNhnWSiBfkcQaAsZ3EALw_wcB&cur_warehouse=CN" target="_blank">here</a>.</li>
-          <li>Load Cell with Analoge to Digital converter, can be found <a href="https://www.digikey.ie/product-detail/en/dfrobot/SEN0160/1738-1127-ND/6588549?utm_adgroup=General&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_Product&utm_term=&productid=&gclid=Cj0KCQjw09HzBRDrARIsAG60GP_NhFRhcF9F-rcz7QZJo11GpTfyI77xUDT32DcVlnj-LVZsmhU0xNgaAvsAEALw_wcB" target="_blank">here</a>.</li>
+          <li>Load Cell with Analog to Digital converter, can be found <a href="https://www.digikey.ie/product-detail/en/dfrobot/SEN0160/1738-1127-ND/6588549?utm_adgroup=General&utm_source=google&utm_medium=cpc&utm_campaign=Dynamic%20Search_Product&utm_term=&productid=&gclid=Cj0KCQjw09HzBRDrARIsAG60GP_NhFRhcF9F-rcz7QZJo11GpTfyI77xUDT32DcVlnj-LVZsmhU0xNgaAvsAEALw_wcB" target="_blank">here</a>.</li>
           <li>Jumper Wires to connect the devices.</li>
           <li>A computer and mobile phone with internet connection</li>
           <li>A brain</li>
@@ -94,7 +94,7 @@
         <h4>Part 2: OPEN - CLOSE</h4>
        <p>In this step have your raspberry pi ready (no need to turn it on). We will use a servo motor to open and close our drawer.</p>
        <p>How servo motors work: </p> 
-       <p>The servo motor has 3 wires, the red is the power which needs voltage, the brown is the ground wire and the most important is the control wire. Through the yellow wire we can apply a pulse whose duration will turn the motor to a specific angle. This principle is called <i>pulse width modulation</i>The servo motor is made up of a DC motor controlled by a variable resistor and gears.
+       <p>The servo motor has 3 wires, the red is the power which needs voltage, the brown is the ground wire and the most important is the yellow control wire. Through the yellow wire we can apply a pulse whose duration will turn the motor to a specific angle. This principle is called <i>pulse width modulation </i>The servo motor is made up of a DC motor controlled by a variable resistor and gears.
       Pulse width modulation has two main components: duty cylce and frequency. Duty cylcle tells the amount of time a signal is on (as a percentage)and the frequency tells how fast the pwm runs a cycle per second. </p>
      <!--https://engineering.eckovation.com/servo-motor-types-working-principle-explained/--> 
       <!--https://knowledge.ni.com/KnowledgeArticleDetails?id=kA00Z0000019OkFSAU-->
@@ -138,10 +138,10 @@
         <p>This step involves some creativity as there are many ways to set up the load cell.</p>
         <p>How load cells work:</p>
         <p>The load cell used in this project is rectangular piece of aluminium with two machined holes in the middle. 
-          The holes make the load cell vunerable to being bent slightly. There are four resistors around the machined holes area and they compress or streach when a weight is placed on the cell. The working princepal of the loadcell and the resistor is based of a wheatsonr bridge which helps to read the tiny variations of resistace like  potential divider. The tiny resistance is read and amplified by the analoge to digital converter.</p>
+          The holes make the load cell vunerable to being bent slightly. There are four resistors around the machined holes area and they compress or streach when a weight is placed on the cell. The working princepal of the load cell and the resistor is based of a wheatstone bridge which helps to read the tiny variations of resistace like  potential divider. The tiny resistance is read and amplified by the analog to digital converter.</p>
         <br>
         <br>
-        <p>Ways to set up a load cell can be seen below in the test section. You can either use the holes in uour loadcell and attach your load cell with screws in your drawer or like me attach it to a block first and and then attach the block inside the drawer.</p>
+        <p>Ways to set up a load cell can be seen below in the test section. You can either use the holes in your load cell and attach your load cell with screws in your drawer or like me attach it to a block first and and then attach the block inside the drawer.</p>
 
 
         <p>NOTE: most important thing is to keep the machined holes in the air unsupported, and then using screws make sure they are tight and prevent slip. </p>
@@ -183,7 +183,7 @@
         <p>On the raspberry pi navigate to the <b>Project2/Tests/weightSensor</b> with the cd command. We need to calibrate the weight sensor we can do this by :</p>
         <ul>
           <li>run the python script <i>sudo python weight_test2.py</i></li>
-          <li>You should get somewhat a constant value being outputted to the console like form me it was around 80590 (Note if your values are negative then maybe its your green and white wires from the a to d converter connected wrong try switching them.)</li>
+          <li>You should get somewhat a constant value being outputted to the console like for me it was around 80590 (Note if your values are negative then maybe its your green and white wires from the a to d converter connected wrong try switching them.)</li>
           <li>Using nano or a different editor in the show_weight() function subtract your value from <b>actualw</b> </li>
           <li>If you run your programme now it should firstly read about zero however if you place a known weight like a kitchen ingridient on it, it will now show the actual weight.</li>
           <li>To get the actual weight place a known weight on the load cell with the programme running and record the value. Divide that value by your weight in grams. eg. if my output value is 1594 and my weight is 100g then my result is 15.9 </li>
@@ -215,7 +215,7 @@
         </div>
 
         
-        <p>The last step is positioning the lock and attacking the servo motor I have bended two pieces of aluminium I found around the house you can also get l shaped backets, I have zip tied them to the motor. You will need to see how this will fit in your drawer (based on your closing arm), My solution was to glue a small piece of wood or anything strong inside my drawer so when the arm of the servo motor rises it will block itself. (as you can see the notch on the picture above is for the small block inside where the drawer sits in.) <br> Also you may use the holes on the servo motor to attach it. The arm of the servo motor may fall off easily so maybe if you plan to use it often glue it in place with care for the motor shaft.</p>
+        <p>The last step is positioning the lock and attacking the servo motor I have bended two pieces of aluminium I found around the house you can also get L shaped backets, I have zip tied them to the motor. You will need to see how this will fit in your drawer (based on your closing arm), My solution was to glue a small piece of wood or anything strong inside my drawer so when the arm of the servo motor rises it will block itself. (as you can see the notch on the picture above is for the small block inside where the drawer sits in.) <br> Also you may use the holes on the servo motor to attach it. The arm of the servo motor may fall off easily so maybe if you plan to use it often glue it in place with care for the motor shaft.</p>
         <div class="centerImage">
           <img class = "borderImage" src="images/servoattach.jpg">
           
@@ -227,7 +227,7 @@
           <img class="borderImage" src="images/alldevices.jpg">
 
         </div>
-        <p>Now you can run your drawer by running the apptest.py just like the other tests were ran, remember to enter your tokens and chat ids there where required. Run the app and if all is good you should be notified then theres any interaction with the floor of your drawer, also your open and close commands should work.</p>
+        <p>Now you can run your drawer by running the apptest.py just like the other tests were ran, remember to enter your tokens and chat id's there where required. Run the app and if all is good you should be notified then theres any interaction with the floor of your drawer, also your open and close commands should work.</p>
          <br>
         <h5>Additional:</h5>
         <p>How to make your programme run whenever you plug in your raspberry pi:</p>

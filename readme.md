@@ -39,4 +39,4 @@ A raspberry pi will be the device that will handle the communication for this pr
 
 # [Project Graphics](https://dominikwawak.github.io/Project2/)
  
-# [Project Website](https://github.com/DominikWawak/Project2/blob/master/Presentation/Website_and_Tutorial/index.html)
+# [Project Website](https://dominikwawak.github.io/Project2/index.html)
