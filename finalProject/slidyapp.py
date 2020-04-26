@@ -1,4 +1,4 @@
-#first take on the app.
+
 # credit to https://maker.pro/raspberry-pi/projects/how-to-create-a-telegram-bot-with-a-raspberry-pi
 import datetime 
 import telepot   
@@ -142,27 +142,27 @@ print ('Listening....')
 
 noitems=0
 
+count = 0
 while 1:
-  show_weight()
-  current = show_weight()
-  difference = previous - current
-  if abs(difference)>delta:
-      time.sleep(8)
-      if(current>previous):
-          print("item added")
-          noitems=noitems+1
-          bot.sendMessage(env.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g , " + "number of items = "+ str(noitems)))
-          
-          
-          
-          
-      elif(current<previous):
-          noitems=noitems-1
-          print("item removed")
-          bot.sendMessage(env.chat_id, str("Item has been removed current weight = " + str(current-4) + "g , "+ "number of items = "+ str(noitems)))
-
-     
-  previous = current 
+    show_weight()
+    current = show_weight()
+    difference = previous - current
+    if abs(difference)>delta:
+        count=count + 1  #increment count
+        time.sleep(8)
+        if (count == 3): #if 3 successive readings in excess of delta
+            if(current>previous):
+                print("item added")
+                noitems=noitems+1
+                bot.sendMessage(env.chat_id, str("Item has been added current weight = " + str(current - 4)+ "g , " + "number of items = "+ str(noitems)))
+            elif(current<previous):
+                noitems=noitems-1
+                print("item removed")
+                bot.sendMessage(env.chat_id, str("Item has been removed current weight = " + str(current-4) + "g , "+ "number of items = "+ str(noitems)))
+            previous = current
+            count=0 
+    else:
+        count=0 #reset count to 0
   
   
 sleep(10)
